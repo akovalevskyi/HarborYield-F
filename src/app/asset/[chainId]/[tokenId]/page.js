@@ -11,6 +11,6 @@ export function generateStaticParams() {
   }));
 }
 
-export default function Page(props) {
-  return <PageClient {...props} />;
+export default function Page() {
+  return <PageClient />;
 }
