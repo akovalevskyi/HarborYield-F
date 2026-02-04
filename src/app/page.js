@@ -17,6 +17,7 @@ import BlockingModal from "./components/BlockingModal";
 import ReceiptModal from "./components/ReceiptModal";
 import assetsData from "../data/assets.json";
 import { wagmiConfig } from "src/config/appkit";
+import { backendUrl } from "src/app/lib/backendUrl";
 
 const CHAIN_META = {
   11155111: { name: "Sepolia", icon: "/eth.svg" },
@@ -125,7 +126,7 @@ const routerAbi = [
   },
 ];
 
-const apiBase = "/api";
+const apiBase = backendUrl;
 
 const normalizeAssets = (data) => {
   const assets = Array.isArray(data?.assets) ? data.assets : Array.isArray(data) ? data : [];

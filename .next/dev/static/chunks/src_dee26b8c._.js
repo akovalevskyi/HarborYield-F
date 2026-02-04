@@ -25,6 +25,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$wagmi$2f$c
 ;
 ;
 const projectId = ("TURBOPACK compile-time value", "21172108b95969e2d101f56f79429973");
+const appUrl = ("TURBOPACK compile-time value", "http://localhost:3000") || (("TURBOPACK compile-time truthy", 1) ? window.location.origin : "TURBOPACK unreachable");
 if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
 ;
 const networks = [
@@ -34,7 +35,7 @@ const networks = [
 const metadata = {
     name: "RWA Hub",
     description: "Multi-chain RWA control in one network",
-    url: "http://localhost:3000",
+    url: appUrl,
     icons: [
         "https://avatars.githubusercontent.com/u/179229932?s=200&v=4"
     ]

@@ -17,6 +17,7 @@ import BlockingModal from "../../../components/BlockingModal";
 import ReceiptModal from "../../../components/ReceiptModal";
 import assetsData from "../../../../data/assets.json";
 import { appKit } from "src/app/lib/appkitClient";
+import { backendUrl } from "src/app/lib/backendUrl";
 import { wagmiConfig } from "src/config/appkit";
 
 const routerAbi = [
@@ -90,7 +91,7 @@ const toNumber = (value) => {
   return null;
 };
 
-const apiBase = "/api";
+const apiBase = backendUrl;
 
 export default function AssetPage() {
   const params = useParams();
