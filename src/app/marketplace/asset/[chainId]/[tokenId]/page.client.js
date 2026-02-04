@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { useParams, useRouter, useSearchParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { readContract, waitForTransactionReceipt } from "@wagmi/core";
 import {
   useAccount,
@@ -90,11 +90,9 @@ const formatDateLabel = (ts, fallbackId) => {
 export default function MarketplaceAssetPage() {
   const params = useParams();
   const router = useRouter();
-  const searchParams = useSearchParams();
   const chainId = Number(params.chainId);
   const tokenId = Number(params.tokenId);
-  const listingParam = searchParams?.get("listingId");
-  const listingIdFromQuery = listingParam ? Number(listingParam) : null;
+  const [listingIdFromQuery, setListingIdFromQuery] = useState(null);
 
   const { assets, networks } = useAssets();
   const asset = useMemo(
@@ -120,6 +118,13 @@ export default function MarketplaceAssetPage() {
   const [historyEntries, setHistoryEntries] = useState([]);
   const [priceSeries, setPriceSeries] = useState([]);
   const [priceLoading, setPriceLoading] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    const listingParam = params.get("listingId");
+    setListingIdFromQuery(listingParam ? Number(listingParam) : null);
+  }, []);
 
   const image =
     typeof asset?.image === "string" && asset.image.trim().length > 0
