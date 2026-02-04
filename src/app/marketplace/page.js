@@ -15,6 +15,7 @@ import ReceiptModal from "../components/ReceiptModal";
 import { useAssets } from "../lib/useAssets";
 import { chainIconMap } from "../lib/chainLabel";
 import { wagmiConfig } from "src/config/appkit";
+import { backendUrl } from "src/app/lib/backendUrl";
 
 const marketAbi = [
   {
@@ -237,7 +238,7 @@ export default function MarketplacePage() {
       });
 
       setStatus("Relaying cancel...");
-      const resp = await fetch("/api/market/cancel", {
+      const resp = await fetch(`${backendUrl}/market/cancel`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

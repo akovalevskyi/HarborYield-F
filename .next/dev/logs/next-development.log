@@ -1,0 +1,521 @@
+[00:00:03.024] Server  LOG     ✓ Ready in 2.8s
+[00:00:08.227] Server  ERROR   ⨯ ./src/app/components/Header.js:7:1
+Module not found: Can't resolve 'src/app/lib/appkitClient'
+   5 | import { useAccount, useChainId, useReadContract } from "wagmi";
+   6 | import { erc20Abi, formatUnits } from "viem";
+>  7 | import { appKit } from "src/app/lib/appkitClient";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 | import { USDX_BY_CHAIN, USDX_DECIMALS } from "src/app/lib/usdx";
+   9 |
+  10 | const chainIconMap = {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/components/Header.js [Client Component Browser]
+    ./src/app/components/Shell.js [Client Component Browser]
+    ./src/app/page.js [Client Component Browser]
+    ./src/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./src/app/components/Header.js [Client Component SSR]
+    ./src/app/components/Shell.js [Client Component SSR]
+    ./src/app/page.js [Client Component SSR]
+    ./src/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./src/app/providers.js:6:1
+Module not found: Can't resolve 'src/app/lib/appkitClient'
+  4 | import { WagmiProvider } from "wagmi";
+  5 | import { wagmiConfig } from "src/config/appkit";
+> 6 | import "src/app/lib/appkitClient";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | const queryClient = new QueryClient();
+  9 |
+
+
+
+Import trace:
+  Server Component:
+    ./src/app/providers.js
+    ./src/app/layout.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./src/app/components/Header.js:8:1
+Module not found: Can't resolve 'src/app/lib/usdx'
+   6 | import { erc20Abi, formatUnits } from "viem";
+   7 | import { appKit } from "src/app/lib/appkitClient";
+>  8 | import { USDX_BY_CHAIN, USDX_DECIMALS } from "src/app/lib/usdx";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | const chainIconMap = {
+  11 |   11155111: "/eth.svg",
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/components/Header.js [Client Component Browser]
+    ./src/app/components/Shell.js [Client Component Browser]
+    ./src/app/page.js [Client Component Browser]
+    ./src/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./src/app/components/Header.js [Client Component SSR]
+    ./src/app/components/Shell.js [Client Component SSR]
+    ./src/app/page.js [Client Component SSR]
+    ./src/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./src/app/components/Banner.js:6:1
+Module not found: Can't resolve 'src/config/appkit'
+  4 | import { waitForTransactionReceipt } from "@wagmi/core";
+  5 | import { useAccount, useChainId, useSwitchChain, useWriteContract } from "wagmi";
+> 6 | import { wagmiConfig } from "src/config/appkit";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import assetsData from "src/data/assets.json";
+  8 |
+  9 | const usdxFaucetAbi = [
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/components/Banner.js [Client Component Browser]
+    ./src/app/components/Shell.js [Client Component Browser]
+    ./src/app/page.js [Client Component Browser]
+    ./src/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./src/app/components/Banner.js [Client Component SSR]
+    ./src/app/components/Shell.js [Client Component SSR]
+    ./src/app/page.js [Client Component SSR]
+    ./src/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./src/app/page.js:19:1
+Module not found: Can't resolve 'src/config/appkit'
+  17 | import ReceiptModal from "./components/ReceiptModal";
+  18 | import assetsData from "../data/assets.json";
+> 19 | import { wagmiConfig } from "src/config/appkit";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  20 |
+  21 | const CHAIN_META = {
+  22 |   11155111: { name: "Sepolia", icon: "/eth.svg" },
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.js [Client Component Browser]
+    ./src/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.js [Client Component SSR]
+    ./src/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./src/app/providers.js:5:1
+Module not found: Can't resolve 'src/config/appkit'
+  3 | import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+  4 | import { WagmiProvider } from "wagmi";
+> 5 | import { wagmiConfig } from "src/config/appkit";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import "src/app/lib/appkitClient";
+  7 |
+  8 | const queryClient = new QueryClient();
+
+
+
+Import trace:
+  Server Component:
+    ./src/app/providers.js
+    ./src/app/layout.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./src/app/components/Banner.js:7:1
+Module not found: Can't resolve 'src/data/assets.json'
+   5 | import { useAccount, useChainId, useSwitchChain, useWriteContract } from "wagmi";
+   6 | import { wagmiConfig } from "src/config/appkit";
+>  7 | import assetsData from "src/data/assets.json";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | const usdxFaucetAbi = [
+  10 |   {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/components/Banner.js [Client Component Browser]
+    ./src/app/components/Shell.js [Client Component Browser]
+    ./src/app/page.js [Client Component Browser]
+    ./src/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./src/app/components/Banner.js [Client Component SSR]
+    ./src/app/components/Shell.js [Client Component SSR]
+    ./src/app/page.js [Client Component SSR]
+    ./src/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:09.428] Browser ERROR   uncaughtError: Error: ./src/app/components/Header.js:7:1
+Module not found: Can't resolve 'src/app/lib/appkitClient'
+   5 | import { useAccount, useChainId, useReadContract } from "wagmi";
+   6 | import { erc20Abi, formatUnits } from "viem";
+>  7 | import { appKit } from "src/app/lib/appkitClient";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 | import { USDX_BY_CHAIN, USDX_DECIMALS } from "src/app/lib/usdx";
+   9 |
+  10 | const chainIconMap = {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/components/Header.js [Client Component Browser]
+    ./src/app/components/Shell.js [Client Component Browser]
+    ./src/app/page.js [Client Component Browser]
+    ./src/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./src/app/components/Header.js [Client Component SSR]
+    ./src/app/components/Shell.js [Client Component SSR]
+    ./src/app/page.js [Client Component SSR]
+    ./src/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:09.683] Browser ERROR   ./src/app/components/Header.js:7:1
+Module not found: Can't resolve 'src/app/lib/appkitClient'
+   5 | import { useAccount, useChainId, useReadContract } from "wagmi";
+   6 | import { erc20Abi, formatUnits } from "viem";
+>  7 | import { appKit } from "src/app/lib/appkitClient";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 | import { USDX_BY_CHAIN, USDX_DECIMALS } from "src/app/lib/usdx";
+   9 |
+  10 | const chainIconMap = {
+
+Import traces:
+  Client Component Browser:
+    ./src/app/components/Header.js [Client Component Browser]
+    ./src/app/components/Shell.js [Client Component Browser]
+    ./src/app/page.js [Client Component Browser]
+    ./src/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./src/app/components/Header.js [Client Component SSR]
+    ./src/app/components/Shell.js [Client Component SSR]
+    ./src/app/page.js [Client Component SSR]
+    ./src/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:09.683] Browser ERROR   ./src/app/providers.js:6:1
+Module not found: Can't resolve 'src/app/lib/appkitClient'
+  4 | import { WagmiProvider } from "wagmi";
+  5 | import { wagmiConfig } from "src/config/appkit";
+> 6 | import "src/app/lib/appkitClient";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | const queryClient = new QueryClient();
+  9 |
+
+Import trace:
+  Server Component:
+    ./src/app/providers.js
+    ./src/app/layout.js
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:09.683] Browser ERROR   ./src/app/components/Header.js:8:1
+Module not found: Can't resolve 'src/app/lib/usdx'
+   6 | import { erc20Abi, formatUnits } from "viem";
+   7 | import { appKit } from "src/app/lib/appkitClient";
+>  8 | import { USDX_BY_CHAIN, USDX_DECIMALS } from "src/app/lib/usdx";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | const chainIconMap = {
+  11 |   11155111: "/eth.svg",
+
+Import traces:
+  Client Component Browser:
+    ./src/app/components/Header.js [Client Component Browser]
+    ./src/app/components/Shell.js [Client Component Browser]
+    ./src/app/page.js [Client Component Browser]
+    ./src/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./src/app/components/Header.js [Client Component SSR]
+    ./src/app/components/Shell.js [Client Component SSR]
+    ./src/app/page.js [Client Component SSR]
+    ./src/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:09.683] Browser ERROR   ./src/app/components/Banner.js:6:1
+Module not found: Can't resolve 'src/config/appkit'
+  4 | import { waitForTransactionReceipt } from "@wagmi/core";
+  5 | import { useAccount, useChainId, useSwitchChain, useWriteContract } from "wagmi";
+> 6 | import { wagmiConfig } from "src/config/appkit";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import assetsData from "src/data/assets.json";
+  8 |
+  9 | const usdxFaucetAbi = [
+
+Import traces:
+  Client Component Browser:
+    ./src/app/components/Banner.js [Client Component Browser]
+    ./src/app/components/Shell.js [Client Component Browser]
+    ./src/app/page.js [Client Component Browser]
+    ./src/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./src/app/components/Banner.js [Client Component SSR]
+    ./src/app/components/Shell.js [Client Component SSR]
+    ./src/app/page.js [Client Component SSR]
+    ./src/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:09.683] Browser ERROR   ./src/app/page.js:19:1
+Module not found: Can't resolve 'src/config/appkit'
+  17 | import ReceiptModal from "./components/ReceiptModal";
+  18 | import assetsData from "../data/assets.json";
+> 19 | import { wagmiConfig } from "src/config/appkit";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  20 |
+  21 | const CHAIN_META = {
+  22 |   11155111: { name: "Sepolia", icon: "/eth.svg" },
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.js [Client Component Browser]
+    ./src/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.js [Client Component SSR]
+    ./src/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:09.683] Browser ERROR   ./src/app/providers.js:5:1
+Module not found: Can't resolve 'src/config/appkit'
+  3 | import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+  4 | import { WagmiProvider } from "wagmi";
+> 5 | import { wagmiConfig } from "src/config/appkit";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import "src/app/lib/appkitClient";
+  7 |
+  8 | const queryClient = new QueryClient();
+
+Import trace:
+  Server Component:
+    ./src/app/providers.js
+    ./src/app/layout.js
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:09.683] Browser ERROR   ./src/app/components/Banner.js:7:1
+Module not found: Can't resolve 'src/data/assets.json'
+   5 | import { useAccount, useChainId, useSwitchChain, useWriteContract } from "wagmi";
+   6 | import { wagmiConfig } from "src/config/appkit";
+>  7 | import assetsData from "src/data/assets.json";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | const usdxFaucetAbi = [
+  10 |   {
+
+Import traces:
+  Client Component Browser:
+    ./src/app/components/Banner.js [Client Component Browser]
+    ./src/app/components/Shell.js [Client Component Browser]
+    ./src/app/page.js [Client Component Browser]
+    ./src/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./src/app/components/Banner.js [Client Component SSR]
+    ./src/app/components/Shell.js [Client Component SSR]
+    ./src/app/page.js [Client Component SSR]
+    ./src/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:10.050] Browser ERROR   ./src/app/components/Header.js:7:1
+Module not found: Can't resolve 'src/app/lib/appkitClient'
+   5 | import { useAccount, useChainId, useReadContract } from "wagmi";
+   6 | import { erc20Abi, formatUnits } from "viem";
+>  7 | import { appKit } from "src/app/lib/appkitClient";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 | import { USDX_BY_CHAIN, USDX_DECIMALS } from "src/app/lib/usdx";
+   9 |
+  10 | const chainIconMap = {
+
+Import traces:
+  Client Component Browser:
+    ./src/app/components/Header.js [Client Component Browser]
+    ./src/app/components/Shell.js [Client Component Browser]
+    ./src/app/page.js [Client Component Browser]
+    ./src/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./src/app/components/Header.js [Client Component SSR]
+    ./src/app/components/Shell.js [Client Component SSR]
+    ./src/app/page.js [Client Component SSR]
+    ./src/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:10.050] Browser ERROR   ./src/app/providers.js:6:1
+Module not found: Can't resolve 'src/app/lib/appkitClient'
+  4 | import { WagmiProvider } from "wagmi";
+  5 | import { wagmiConfig } from "src/config/appkit";
+> 6 | import "src/app/lib/appkitClient";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | const queryClient = new QueryClient();
+  9 |
+
+Import trace:
+  Server Component:
+    ./src/app/providers.js
+    ./src/app/layout.js
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:10.050] Browser ERROR   ./src/app/components/Header.js:8:1
+Module not found: Can't resolve 'src/app/lib/usdx'
+   6 | import { erc20Abi, formatUnits } from "viem";
+   7 | import { appKit } from "src/app/lib/appkitClient";
+>  8 | import { USDX_BY_CHAIN, USDX_DECIMALS } from "src/app/lib/usdx";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | const chainIconMap = {
+  11 |   11155111: "/eth.svg",
+
+Import traces:
+  Client Component Browser:
+    ./src/app/components/Header.js [Client Component Browser]
+    ./src/app/components/Shell.js [Client Component Browser]
+    ./src/app/page.js [Client Component Browser]
+    ./src/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./src/app/components/Header.js [Client Component SSR]
+    ./src/app/components/Shell.js [Client Component SSR]
+    ./src/app/page.js [Client Component SSR]
+    ./src/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:10.050] Browser ERROR   ./src/app/components/Banner.js:6:1
+Module not found: Can't resolve 'src/config/appkit'
+  4 | import { waitForTransactionReceipt } from "@wagmi/core";
+  5 | import { useAccount, useChainId, useSwitchChain, useWriteContract } from "wagmi";
+> 6 | import { wagmiConfig } from "src/config/appkit";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import assetsData from "src/data/assets.json";
+  8 |
+  9 | const usdxFaucetAbi = [
+
+Import traces:
+  Client Component Browser:
+    ./src/app/components/Banner.js [Client Component Browser]
+    ./src/app/components/Shell.js [Client Component Browser]
+    ./src/app/page.js [Client Component Browser]
+    ./src/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./src/app/components/Banner.js [Client Component SSR]
+    ./src/app/components/Shell.js [Client Component SSR]
+    ./src/app/page.js [Client Component SSR]
+    ./src/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:10.050] Browser ERROR   ./src/app/page.js:19:1
+Module not found: Can't resolve 'src/config/appkit'
+  17 | import ReceiptModal from "./components/ReceiptModal";
+  18 | import assetsData from "../data/assets.json";
+> 19 | import { wagmiConfig } from "src/config/appkit";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  20 |
+  21 | const CHAIN_META = {
+  22 |   11155111: { name: "Sepolia", icon: "/eth.svg" },
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.js [Client Component Browser]
+    ./src/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.js [Client Component SSR]
+    ./src/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:10.050] Browser ERROR   ./src/app/providers.js:5:1
+Module not found: Can't resolve 'src/config/appkit'
+  3 | import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+  4 | import { WagmiProvider } from "wagmi";
+> 5 | import { wagmiConfig } from "src/config/appkit";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import "src/app/lib/appkitClient";
+  7 |
+  8 | const queryClient = new QueryClient();
+
+Import trace:
+  Server Component:
+    ./src/app/providers.js
+    ./src/app/layout.js
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:10.050] Browser ERROR   ./src/app/components/Banner.js:7:1
+Module not found: Can't resolve 'src/data/assets.json'
+   5 | import { useAccount, useChainId, useSwitchChain, useWriteContract } from "wagmi";
+   6 | import { wagmiConfig } from "src/config/appkit";
+>  7 | import assetsData from "src/data/assets.json";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | const usdxFaucetAbi = [
+  10 |   {
+
+Import traces:
+  Client Component Browser:
+    ./src/app/components/Banner.js [Client Component Browser]
+    ./src/app/components/Shell.js [Client Component Browser]
+    ./src/app/page.js [Client Component Browser]
+    ./src/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./src/app/components/Banner.js [Client Component SSR]
+    ./src/app/components/Shell.js [Client Component SSR]
+    ./src/app/page.js [Client Component SSR]
+    ./src/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:01:58.216] Server  LOG     ✓ Compiled in 3.7s
+[00:02:00.367] Server  ERROR   ⨯ Error: Missing NEXT_PUBLIC_PROJECT_ID in frontend_new/.env.local
+[00:02:01.133] Browser ERROR   uncaughtError: Error: Missing NEXT_PUBLIC_PROJECT_ID in frontend_new/.env.local
+[00:02:20.153] Server  LOG       Reload env: .env.local
+[00:02:20.592] Server  ERROR   ⨯ Error: Missing NEXT_PUBLIC_PROJECT_ID in frontend_new/.env.local
+[00:02:21.048] Browser ERROR   uncaughtError: Error: Missing NEXT_PUBLIC_PROJECT_ID in frontend_new/.env.local
+[00:02:21.405] Server  LOG       Reload env: .env.local
+[00:02:22.543] Server  LOG     ✓ Compiled in 1031ms
+[00:02:22.673] Server  WARN    Lit is in dev mode. Not recommended for production! See https://lit.dev/msg/dev-mode for more information.
+[00:02:22.913] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:02:22.913] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./src/config/appkit.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:02:22.913] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:02:23.450] Browser WARN    Lit is in dev mode. Not recommended for production! See https://lit.dev/msg/dev-mode for more information.
+[00:02:23.695] Browser INFO    Discarding cache for address eip155:11155111:0x6F41aAe67b846714fe3eE3F174CbA9d4E82b4Fbd

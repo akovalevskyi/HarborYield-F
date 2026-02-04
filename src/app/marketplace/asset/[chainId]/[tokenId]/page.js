@@ -19,6 +19,7 @@ import ReceiptModal from "../../../../components/ReceiptModal";
 import { useAssets } from "../../../../lib/useAssets";
 import { formatChainName } from "../../../../lib/chainLabel";
 import { wagmiConfig } from "src/config/appkit";
+import { backendUrl } from "src/app/lib/backendUrl";
 
 const marketAbi = [
   {
@@ -256,7 +257,9 @@ export default function MarketplaceAssetPage() {
       try {
         let normalized = [];
         try {
-          const res = await fetch(`/api/entries/asset/${asset.chainId}/${asset.contract}/${asset.tokenId}`);
+          const res = await fetch(
+            `${backendUrl}/entries/asset/${asset.chainId}/${asset.contract}/${asset.tokenId}`
+          );
           if (res.ok) {
             const json = await res.json();
             const entries = Array.isArray(json?.entries) ? json.entries : [];
@@ -514,7 +517,7 @@ export default function MarketplaceAssetPage() {
       });
 
       setStatus("Relaying purchase...");
-      const resp = await fetch("/api/market/buy", {
+      const resp = await fetch(`${backendUrl}/market/buy`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -593,7 +596,7 @@ export default function MarketplaceAssetPage() {
       });
 
       setStatus("Relaying cancel...");
-      const resp = await fetch("/api/market/cancel", {
+      const resp = await fetch(`${backendUrl}/market/cancel`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

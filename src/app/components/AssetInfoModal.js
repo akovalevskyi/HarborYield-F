@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import PriceChart from "./PriceChart";
 import { chainIconMap, formatChainId, formatChainName } from "../lib/chainLabel";
 import AssetImage from "./AssetImage";
+import { backendUrl } from "src/app/lib/backendUrl";
 
 export default function AssetInfoModal({ open, asset, available, issued, onClose }) {
   const [series, setSeries] = useState([]);
@@ -25,7 +26,9 @@ export default function AssetInfoModal({ open, asset, available, issued, onClose
       if (!open || !asset) return;
       setLoading(true);
       try {
-        const res = await fetch(`/api/entries/asset/${chainId}/${contract}/${tokenId}`);
+        const res = await fetch(
+          `${backendUrl}/entries/asset/${chainId}/${contract}/${tokenId}`
+        );
         if (!res.ok) return;
         const json = await res.json();
         const entries = Array.isArray(json.entries) ? json.entries : [];
