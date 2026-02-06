@@ -48,10 +48,12 @@ export default function Header() {
   return (
     <header className="header">
       <div className="logo">
-        <div className="logo-mark">RWA Hub</div>
+        <Link className="logo-mark" href="/">
+          RWA Hub
+        </Link>
       </div>
       <nav className="nav">
-        <Link className={pathname === "/" ? "active" : ""} href="/">
+        <Link className={pathname === "/shop" ? "active" : ""} href="/shop">
           Shop
         </Link>
         <Link className={pathname === "/marketplace" ? "active" : ""} href="/marketplace">

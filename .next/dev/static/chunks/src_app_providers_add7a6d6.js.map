@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/boriskaborisenko/Desktop/HarborYield-F/src/app/providers.js"],"sourcesContent":["\"use client\";\n\nimport { QueryClient, QueryClientProvider } from \"@tanstack/react-query\";\nimport { WagmiProvider } from \"wagmi\";\nimport { wagmiConfig } from \"src/config/appkit\";\nimport \"src/app/lib/appkitClient\";\n\nconst queryClient = new QueryClient();\n\nexport default function Providers({ children }) {\n  return (\n    <WagmiProvider config={wagmiConfig}>\n      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>\n    </WagmiProvider>\n  );\n}\n"],"names":[],"mappings":";;;;;AAEA;AAAA;AACA;;;;;;;;;;;AAHA;;;;;;AAOA,MAAM,cAAc,IAAI,+LAAW;AAEpB,SAAS,UAAU,EAAE,QAAQ,EAAE;IAC5C,qBACE,6LAAC,mKAAa;QAAC,QAAQ;kBACrB,cAAA,6LAAC,gNAAmB;YAAC,QAAQ;sBAAc;;;;;;;;;;;AAGjD;KANwB"}}]
-}
