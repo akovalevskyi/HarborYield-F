@@ -22,6 +22,7 @@ import { backendUrl } from "src/app/lib/backendUrl";
 const CHAIN_META = {
   11155111: { name: "Sepolia", icon: "/eth.svg" },
   80002: { name: "Polygon Amoy", icon: "/pol.svg" },
+  421614: { name: "Arbitrum Sepolia", icon: "/arb.svg" },
 };
 
 const numberFormat = new Intl.NumberFormat("en-US");

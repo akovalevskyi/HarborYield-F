@@ -10,6 +10,7 @@ import { USDX_BY_CHAIN, USDX_DECIMALS } from "src/app/lib/usdx";
 const chainIconMap = {
   11155111: "/eth.svg",
   80002: "/pol.svg",
+  421614: "/arb.svg",
 };
 
 function shortAddress(address) {
