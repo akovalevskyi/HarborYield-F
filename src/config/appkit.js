@@ -1,5 +1,5 @@
 import { WagmiAdapter } from "@reown/appkit-adapter-wagmi";
-import { polygonAmoy, sepolia, arbitrumSepolia } from "@reown/appkit/networks";
+import { bscTestnet, polygonAmoy, sepolia } from "@reown/appkit/networks";
 import { cookieStorage, createStorage } from "wagmi";
 
 const projectId = process.env.NEXT_PUBLIC_PROJECT_ID;
@@ -11,7 +11,7 @@ if (!projectId) {
   throw new Error("Missing NEXT_PUBLIC_PROJECT_ID in frontend_new/.env.local");
 }
 
-export const networks = [sepolia, polygonAmoy, arbitrumSepolia];
+export const networks = [sepolia, polygonAmoy, bscTestnet];
 
 export const metadata = {
   name: "RWA Hub",
