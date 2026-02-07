@@ -10,7 +10,7 @@ import { USDX_BY_CHAIN, USDX_DECIMALS } from "src/app/lib/usdx";
 const chainIconMap = {
   11155111: "/eth.svg",
   80002: "/pol.svg",
-  421614: "/arb.svg",
+  97: "/bsc.svg",
 };
 
 function shortAddress(address) {
@@ -30,6 +30,9 @@ export default function Header() {
   const { address, isConnected } = useAccount();
   const chainId = useChainId();
   const usdxAddress = USDX_BY_CHAIN[chainId];
+  const isMarketplace = pathname === "/" || pathname.startsWith("/marketplace");
+  const isP2P = pathname.startsWith("/p2pmarket");
+  const isDashboard = pathname.startsWith("/dashboard");
 
   const { data: balance } = useReadContract({
     abi: erc20Abi,
@@ -54,13 +57,13 @@ export default function Header() {
         </Link>
       </div>
       <nav className="nav">
-        <Link className={pathname === "/shop" ? "active" : ""} href="/shop">
-          Shop
-        </Link>
-        <Link className={pathname === "/marketplace" ? "active" : ""} href="/marketplace">
+        <Link className={isMarketplace ? "active" : ""} href="/marketplace">
           Marketplace
         </Link>
-        <Link className={pathname === "/dashboard" ? "active" : ""} href="/dashboard">
+        <Link className={isP2P ? "active" : ""} href="/p2pmarket">
+          P2P Market
+        </Link>
+        <Link className={isDashboard ? "active" : ""} href="/dashboard">
           Dashboard
         </Link>
       </nav>

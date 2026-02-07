@@ -1,13 +1,13 @@
 export const chainIconMap = {
   11155111: "/eth.svg",
   80002: "/pol.svg",
-  421614: "/arb.svg",
+  97: "/bsc.svg",
 };
 
 export function formatChainName(chainId) {
   if (chainId === 11155111) return "Sepolia";
   if (chainId === 80002) return "Polygon Amoy";
-  if (chainId === 421614) return "Arbitrum Sepolia";
+  if (chainId === 97) return "BSC Testnet";
   return `Chain ${chainId}`;
 }
 

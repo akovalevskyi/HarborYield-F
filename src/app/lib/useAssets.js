@@ -17,13 +17,18 @@ const toNumber = (value) => {
 export function useAssets() {
   return useMemo(() => {
     const rawAssets = Array.isArray(assetsData?.assets) ? assetsData.assets : [];
+    const networks = assetsData?.networks ?? {};
     const normalizedAssets = rawAssets.map((asset) => {
       const priceUSDx = toNumber(asset.priceUSDx ?? asset.price) ?? 0;
+      const chainId = Number(asset.chainId);
+      const contract =
+        asset.contract || asset.rwa1155 || networks[String(chainId)]?.rwa1155 || null;
       return {
         ...asset,
-        chainId: Number(asset.chainId),
+        chainId,
         tokenId: Number(asset.tokenId),
         priceUSDx,
+        contract,
         issuerScore: asset.issuerScore ?? asset.issuer_score,
         assetUrl: asset.assetUrl ?? asset.asset_url,
       };
@@ -31,7 +36,7 @@ export function useAssets() {
 
     return {
       assets: normalizedAssets,
-      networks: assetsData?.networks ?? {},
+      networks,
       loading: false,
       error: null,
     };

@@ -69,7 +69,7 @@ const maxSupplyAbi = [
 const CHAIN_META = {
   11155111: { name: "Sepolia", icon: "/eth.svg" },
   80002: { name: "Polygon Amoy", icon: "/pol.svg" },
-  421614: { name: "Arbitrum Sepolia", icon: "/arb.svg" },
+  97: { name: "BSC Testnet", icon: "/bsc.svg" },
 };
 
 const numberFormat = new Intl.NumberFormat("en-US");
@@ -109,6 +109,7 @@ export default function AssetPage() {
     () => assets.find((item) => Number(item.chainId) === chainId && Number(item.tokenId) === tokenId),
     [assets, chainId, tokenId]
   );
+  const assetContract = asset?.contract || networks[String(chainId)]?.rwa1155 || null;
   const [payChainId, setPayChainId] = useState(11155111);
   const payNetwork = networks[String(payChainId)];
   const publicClient = usePublicClient({ chainId: payChainId });
@@ -165,24 +166,24 @@ export default function AssetPage() {
       : null;
 
   const supplyQueries = useMemo(() => {
-    if (!asset?.contract) return [];
+    if (!assetContract) return [];
     return [
       {
         abi: totalSupplyAbi,
-        address: asset.contract,
+        address: assetContract,
         functionName: "totalSupply",
         args: [BigInt(tokenId)],
         chainId,
       },
       {
         abi: maxSupplyAbi,
-        address: asset.contract,
+        address: assetContract,
         functionName: "maxSupply",
         args: [BigInt(tokenId)],
         chainId,
       },
     ];
-  }, [asset?.contract, chainId, tokenId]);
+  }, [assetContract, chainId, tokenId]);
 
   const { data: supplyData } = useReadContracts({
     contracts: supplyQueries,
@@ -265,7 +266,7 @@ export default function AssetPage() {
       setStatus("Asset not found.");
       return;
     }
-    if (!asset.contract) {
+    if (!assetContract) {
       setStatus("Missing asset contract.");
       return;
     }
@@ -306,7 +307,7 @@ export default function AssetPage() {
         legs: [
           {
             chainId: asset.chainId,
-            rwa1155: asset.contract,
+            rwa1155: assetContract,
             tokenIds: [asset.tokenId],
             amounts: [Math.max(1, Math.floor(qty))],
           },
@@ -480,7 +481,7 @@ export default function AssetPage() {
               </button>
             </div>
             <div className="asset-foot">
-              <div>Contract: {asset.contract ?? "—"}</div>
+              <div>Contract: {assetContract ?? "—"}</div>
               <div>
                 Chain: {params.chainId} · Token: {params.tokenId}
               </div>

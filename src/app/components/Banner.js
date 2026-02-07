@@ -18,6 +18,7 @@ const usdxFaucetAbi = [
 
 const SEPOLIA_ID = 11155111;
 const AMOY_ID = 80002;
+const BSC_TESTNET_ID = 97;
 
 export default function Banner() {
   const { address, isConnected } = useAccount();
@@ -144,17 +145,26 @@ export default function Banner() {
       onClick: () => handleFaucet(AMOY_ID),
       disabled: faucetBusy === AMOY_ID,
     },
+    {
+      label:
+        faucetBusy === BSC_TESTNET_ID
+          ? "Faucet USDx (BSC Testnet)..."
+          : "Faucet USDx (BSC Testnet)",
+      onClick: () => handleFaucet(BSC_TESTNET_ID),
+      disabled: faucetBusy === BSC_TESTNET_ID,
+    },
   ];
 
   return (
     <div className="banner">
       <div className="banner-text">
         <div>
-          This project runs on test networks: Sepolia, Amoy, Oasis Sapphire. Use USDx
-          (USDC/USDT-like) to interact.
+          This project runs on test networks: Sepolia, Amoy, BSC Testnet, Oasis Sapphire. Use
+          USDx (USDC/USDT-like) to interact.
         </div>
         <div>Sepolia USDx: {assetsData?.networks?.["11155111"]?.usdx ?? "—"}</div>
         <div>Amoy USDx: {assetsData?.networks?.["80002"]?.usdx ?? "—"}</div>
+        <div>BSC Testnet USDx: {assetsData?.networks?.["97"]?.usdx ?? "—"}</div>
       </div>
       <div className="banner-actions">
         {buttons.map((item) => (
