@@ -622,8 +622,9 @@ export default function MarketplacePage() {
 
   const getCardBackground = (image) => {
     if (!image) return undefined;
-    if (typeof image === "string" && image.startsWith("http")) {
-      return { backgroundImage: `url(${image})`, backgroundSize: "cover", backgroundPosition: "center" };
+    if (typeof image === "string" && (image.startsWith("http") || image.startsWith("/"))) {
+      const safeImage = encodeURI(image);
+      return { backgroundImage: `url("${safeImage}")`, backgroundSize: "cover", backgroundPosition: "center" };
     }
     return { background: image };
   };

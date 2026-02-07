@@ -140,8 +140,9 @@ export default function AssetPage() {
   const imageStyle = useMemo(() => {
     if (!image) return undefined;
     if (typeof image === "string" && (image.startsWith("http") || image.startsWith("/"))) {
+      const safeImage = encodeURI(image);
       return {
-        backgroundImage: `url(${image})`,
+        backgroundImage: `url("${safeImage}")`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       };
