@@ -1,6 +1,6 @@
 {
   "app": {
-    "[project]/src/app/asset/[chainId]/[tokenId]/page": [
+    "[project]/projects/HarborYield-F/src/app/_not-found/page": [
       "static/media/0c89a48fa5027cee-s.p.4564287c.woff2",
       "static/media/e9d5b069f63ab620-s.p.c6182c6b.woff2",
       "static/media/99e609270109b47d-s.p.64b9304e.woff2",
@@ -8,7 +8,7 @@
       "static/media/23b7a97ae3b5c134-s.p.2902b61f.woff2",
       "static/media/a6537efad755a2c7-s.p.8f77ce3b.woff2"
     ],
-    "[project]/src/app/dashboard/asset/[chainId]/[tokenId]/page": [
+    "[project]/projects/HarborYield-F/src/app/asset/[chainId]/[tokenId]/page": [
       "static/media/0c89a48fa5027cee-s.p.4564287c.woff2",
       "static/media/e9d5b069f63ab620-s.p.c6182c6b.woff2",
       "static/media/99e609270109b47d-s.p.64b9304e.woff2",
@@ -16,7 +16,7 @@
       "static/media/23b7a97ae3b5c134-s.p.2902b61f.woff2",
       "static/media/a6537efad755a2c7-s.p.8f77ce3b.woff2"
     ],
-    "[project]/src/app/dashboard/page": [
+    "[project]/projects/HarborYield-F/src/app/page": [
       "static/media/0c89a48fa5027cee-s.p.4564287c.woff2",
       "static/media/e9d5b069f63ab620-s.p.c6182c6b.woff2",
       "static/media/99e609270109b47d-s.p.64b9304e.woff2",
@@ -24,31 +24,7 @@
       "static/media/23b7a97ae3b5c134-s.p.2902b61f.woff2",
       "static/media/a6537efad755a2c7-s.p.8f77ce3b.woff2"
     ],
-    "[project]/src/app/marketplace/page": [
-      "static/media/0c89a48fa5027cee-s.p.4564287c.woff2",
-      "static/media/e9d5b069f63ab620-s.p.c6182c6b.woff2",
-      "static/media/99e609270109b47d-s.p.64b9304e.woff2",
-      "static/media/effe91970fc4db64-s.p.19510058.woff2",
-      "static/media/23b7a97ae3b5c134-s.p.2902b61f.woff2",
-      "static/media/a6537efad755a2c7-s.p.8f77ce3b.woff2"
-    ],
-    "[project]/src/app/p2pmarket/asset/[chainId]/[tokenId]/page": [
-      "static/media/0c89a48fa5027cee-s.p.4564287c.woff2",
-      "static/media/e9d5b069f63ab620-s.p.c6182c6b.woff2",
-      "static/media/99e609270109b47d-s.p.64b9304e.woff2",
-      "static/media/effe91970fc4db64-s.p.19510058.woff2",
-      "static/media/23b7a97ae3b5c134-s.p.2902b61f.woff2",
-      "static/media/a6537efad755a2c7-s.p.8f77ce3b.woff2"
-    ],
-    "[project]/src/app/p2pmarket/page": [
-      "static/media/0c89a48fa5027cee-s.p.4564287c.woff2",
-      "static/media/e9d5b069f63ab620-s.p.c6182c6b.woff2",
-      "static/media/99e609270109b47d-s.p.64b9304e.woff2",
-      "static/media/effe91970fc4db64-s.p.19510058.woff2",
-      "static/media/23b7a97ae3b5c134-s.p.2902b61f.woff2",
-      "static/media/a6537efad755a2c7-s.p.8f77ce3b.woff2"
-    ],
-    "[project]/src/app/page": [
+    "[project]/projects/HarborYield-F/src/app/shop/page": [
       "static/media/0c89a48fa5027cee-s.p.4564287c.woff2",
       "static/media/e9d5b069f63ab620-s.p.c6182c6b.woff2",
       "static/media/99e609270109b47d-s.p.64b9304e.woff2",
